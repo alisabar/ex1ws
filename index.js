@@ -3,6 +3,7 @@ const http = require('http'),
       data = require("./json/targil1.json"),
       app = express(),
       bodyParser = require('body-parser'),
+      app.use(express.static('public')),
       port = process.env.PORT || 8080;
 
 var Marathon = require('./movie_marathon');
@@ -43,6 +44,13 @@ app.post('/genres/',
     (req,res)=>{
         myMarathon.getMoviesByGenrePost(res,req.body);
     });
+
+app.get('/API.html',
+    (req,res)=>{
+
+
+    });
+
 app.all('*',
     (req,res)=>{
         myMarathon.error(res,req.body);
