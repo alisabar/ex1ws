@@ -42,25 +42,6 @@ app.get('/getMoviesByGenre/:genre_id/:year',
 app.post('/genres/',
     (req,res)=>{
         myMarathon.getMoviesByGenrePost(res,req.body);
-    //     console.log('req.body '+JSON.stringify(req.body));
-    //     if(!req.body){
-    //         console.log('no body!');
-    //         res.status(500).json({"err":"genre parameter missing from body!"});
-    //         return;
-    //     }
-    //     var numgenre=req.body.genre;
-    //     console.log(`post: ${numgenre}`);
-    // let foundMovies=false;
-    //     for(let i in data.genres){
-    //         var genre=data.genres[i];
-    //         if(genre.genre==numgenre){
-    //             console.log(`found:${numgenre}`);
-    //             foundMovies=true;
-    //             res.status(200).json({"movies":genre.movies});
-    //         }
-    //     }
-    //     if(!foundMovies)
-    //         res.status(200).json({"err":"genre not found"});
     });
 app.all('*',
     (req,res)=>{
