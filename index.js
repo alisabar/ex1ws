@@ -3,15 +3,15 @@ const http = require('http'),
       data = require("./json/targil1.json"),
       app = express(),
       bodyParser = require('body-parser'),
-      app.use(express.static('public')),
       port = process.env.PORT || 8080;
 
 var Marathon = require('./movie_marathon');
 var myMarathon=new Marathon();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }))
- 
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static('public'));
+
 console.log("port is "+port);
 
 http.createServer(app).listen(port);
